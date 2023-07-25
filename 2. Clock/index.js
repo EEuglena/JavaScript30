@@ -25,7 +25,7 @@ const setSecond = () => {
 	if (degree === 0) {
 		secondHand.style.transition = "unset";
 	} else {
-		secondHand.style.transition = "";
+		secondHand.style.transition = "all 0.05s ease-in";
 	}
 	secondHand.style.transform = `rotate(${degree}deg)`;
 };

@@ -21,7 +21,6 @@ body {
 
 .hand {
 	position: absolute;
-	transition: all 0.05s ease-in;
 }
 
 #hour-hand {
@@ -52,4 +51,5 @@ body {
 	transform-origin: 50% calc(100% - 1px);
 	border-radius: 1px;
 	background-color: #ff0000bb;
+	transition: all 0.05s ease-in;
 }
