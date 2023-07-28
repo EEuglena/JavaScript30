@@ -1,0 +1,85 @@
+html {
+	font-family: "Amatic SC", cursive;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+}
+
+.panel1 {
+	background-image: url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);
+}
+.panel2 {
+	background-image: url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500);
+}
+.panel3 {
+	background-image: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d);
+}
+.panel4 {
+	background-image: url(https://source.unsplash.com/ITjiVXcwVng/1500x1500);
+}
+.panel5 {
+	background-image: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
+}
+
+.panels {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.panel {
+	flex-grow: 1;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	font-size: 2rem;
+	color: white;
+	transition: all 0.5s cubic-bezier(0.675, -0.38, 0.305, 1.255),
+		box-shadow 0.1s ease-out;
+	box-shadow: inset 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+.panel p:first-child {
+	transform: translateY(-50vh);
+}
+
+.panel p:last-child {
+	transform: translateY(50vh);
+}
+
+.panel p {
+	text-shadow: 0 0 0.5rem rgba(0, 0, 0, 1);
+	transition: all 0.5s cubic-bezier(0.675, -0.38, 0.305, 1.255),
+		font-size 0.5s ease-in-out;
+}
+
+.panel p.title {
+	height: 10rem;
+	line-height: 10rem;
+	margin: 4rem 0;
+	font-size: 4rem;
+}
+
+.panel:hover {
+	box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5);
+}
+
+.panel.open {
+	flex-grow: 5;
+	box-shadow: inset 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+.panel.open p {
+	transform: translateY(0);
+}
+
+.panel.open p.title {
+	font-size: 6rem;
+}
