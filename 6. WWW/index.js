@@ -16,6 +16,7 @@ const setUl = (items, regex) => {
 			regex,
 			"<span>$1</span>"
 		);
+
 		population.textContent = parseInt(item.population).toLocaleString(
 			"en-US"
 		);
