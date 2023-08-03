@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Console Tricks!</title>
+		<link rel="icon" href="https://fav.farm/⛏" />
+	</head>
+	<body>
+		<p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+		<script>
+			const dogs = [
+				{ name: "Snickers", age: 2 },
+				{ name: "Hugo", age: 8 },
+			];
+
+			// Breakpoint
+			function makeGreen() {
+				const p = document.querySelector("p");
+				p.style.color = "#BADA55";
+				p.style.fontSize = "50px";
+				console.trace("makeGreen() is called.");
+			}
+
+			// Regular
+			console.log("Hello world!");
+
+			// Interpolated
+			console.log("My name is %s.", "Lisa");
+			console.log("I'm %d y/o.", 20);
+			console.log("Here's my profile. %o", { name: "Lisa", age: 20 });
+			console.log(`The year is ${new Date().getFullYear()}`);
+
+			// Styled
+			console.log(
+				"%cThis is a %cbig %cbig %ctext.",
+				"color: tomato; font-size: 1.5rem",
+				"color: orange; font-size: 2rem",
+				"color: green; font-size: 2.5rem",
+				"color: slateblue; font-size: 3rem; font-weight: 600"
+			);
+
+			// Log Level
+			console.log("It's a normal message.");
+			console.info("Giving you an info :)");
+			console.warn("This might cause error.");
+			console.error("This really is an error.");
+			console.debug("🛠 Debug message 🐞");
+
+			// Testing
+			console.assert(
+				document.querySelector("div"),
+				"There's no div in HTML :/"
+			);
+
+			// Viewing DOM Elements
+			console.log(makeGreen);
+			console.dir(makeGreen);
+
+			// Grouping together
+			dogs.forEach((dog) => {
+				console.group(`${dog.name}`);
+				console.log(`This is ${dog.name}`);
+				console.groupCollapsed(`${dog.name} age`);
+				console.log(`${dog.name} is ${dog.age} y/o.`);
+				console.log(`${dog.name} is ${dog.age * 7} in dog y/o.`);
+				console.groupEnd(`${dog.name} age`);
+				console.groupEnd(`${dog.name}`);
+			});
+
+			// counting
+			dogs.forEach(() => console.count("dogs"));
+
+			// table
+			console.table(dogs);
+
+			// timing
+			console.time("fetch");
+			fetch("https://catfact.ninja/fact")
+				.then((res) => {
+					console.timeLog("fetch");
+					return res.json();
+				})
+				.then((res) => {
+					console.log(res.fact);
+					console.timeEnd("fetch");
+				});
+
+			// clearing
+			console.clear();
+		</script>
+	</body>
+</html>
