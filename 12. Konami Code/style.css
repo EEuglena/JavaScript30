@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Noto+Sans&family=Noto+Sans+KR&display=swap");
+
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 5rem 3rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	background-color: #daecfd;
+
+	font-family: "Noto Sans KR", "Noto Sans", sans-serif;
+	text-transform: uppercase;
+
+	transition: all 0.2s;
+}
+
+#display {
+	width: 10rem;
+	height: 10rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-radius: 10rem;
+	background-color: #daecfd;
+	box-shadow: 1rem 1rem 2rem #b4cfe9, -1rem -1rem 2rem #f1f8ff;
+
+	font-size: 2rem;
+	font-weight: 900;
+}
+
+.commands {
+	padding: 5rem;
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.command {
+	width: 3rem;
+	height: 3rem;
+
+	margin: 1rem;
+	padding: 1rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-radius: 3rem;
+	background-color: #daecfd;
+	box-shadow: 0.5rem 0.5rem 1rem #b4cfe9, -0.5rem -0.5rem 1rem #f1f8ff;
+
+	font-size: 1rem;
+	font-weight: 900;
+}
