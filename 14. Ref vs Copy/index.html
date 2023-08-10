@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>JS Reference VS Copy</title>
+		<link rel="icon" href="https://fav.farm/🎭" />
+	</head>
+	<body>
+		<script>
+			// start with strings, numbers and booleans
+			// Strings
+			console.groupCollapsed(
+				"%cCase 1-1. String",
+				"font-weight: 600; font-size: 1.2rem"
+			);
+			let originalString = "original";
+			let copiedString = originalString;
+			console.log("original:", originalString);
+			console.log("copied:", copiedString);
+			originalString = "changed";
+			console.log("* original string changed *");
+			console.log("original:", originalString);
+			console.log("copied:", copiedString);
+			console.groupEnd();
+			console.log("");
+
+			// Numbers
+			console.groupCollapsed(
+				"%cCase 1-2. Number",
+				"font-weight: 600; font-size: 1.2rem"
+			);
+			let originalNumber = 0;
+			let copiedNumber = originalNumber;
+			console.log("original:", originalNumber);
+			console.log("copied:", copiedNumber);
+			originalNumber = 1;
+			console.log("* original number changed *");
+			console.log("original:", originalNumber);
+			console.log("copied:", copiedNumber);
+			console.groupEnd();
+			console.log("");
+
+			// Booleans
+			console.groupCollapsed(
+				"%cCase 1-3. Boolean",
+				"font-weight: 600; font-size: 1.2rem"
+			);
+			let originalBoolean = true;
+			let copiedBoolean = originalBoolean;
+			console.log("original:", originalBoolean);
+			console.log("copied:", copiedBoolean);
+			originalBoolean = false;
+			console.log("* original boolean changed *");
+			console.log("original:", originalBoolean);
+			console.log("copied:", copiedBoolean);
+			console.groupEnd();
+			console.log("");
+
+			// Let's say we have an array
+			console.groupCollapsed(
+				"%cCase 2-1. Array",
+				"font-weight: 600; font-size: 1.2rem"
+			);
+			const players = ["Wes", "Sarah", "Ryan", "Poppy"];
+
+			// and we want to make a copy of it.
+			const roster = players;
+			console.log("original:", players);
+			console.log("copied:", roster);
+
+			// You might think we can just do something like this:
+			roster.push("Aiden");
+			console.log("* Aiden joined the roster *");
+
+			// however what happens when we update that array?
+			console.log("original:", players);
+			console.log("copied:", roster);
+			console.groupEnd();
+			console.log("");
+
+			// now here is the problem!
+
+			// oh no - we have edited the original array too!
+
+			// Why? It's because that is an array reference, not an array copy.
+			// They both point to the same array!
+
+			// So, how do we fix this? We take a copy instead!
+
+			// one way
+			console.groupCollapsed(
+				"%cCase 2-2. Slice",
+				"font-weight: 600; font-size: 1.2rem"
+			);
+			const slicePlayers = players.slice();
+			console.log(
+				"%cconst slicePlayers = players.slice();",
+				"font-style: italic; color: crimson"
+			);
+			console.log("original:", players);
+			console.log("sliced:", slicePlayers);
+			slicePlayers.push("Lisa");
+			console.log("* Lisa joined the team Slice *");
+			console.log("original:", players);
+			console.log("sliced:", slicePlayers);
+			console.groupEnd();
+			console.log("");
+
+			// or create a new array and concat the old one in
+			console.groupCollapsed(
+				"%cCase 2-3. Concat",
+				"font-weight: 600; font-size: 1.2rem"
+			);
+			const concatPlayers = [].concat(players);
+			console.log(
+				"%cconst concatPlayers = [].concat(players);",
+				"font-style: italic; color: crimson"
+			);
+			console.log("original:", players);
+			console.log("concat:", concatPlayers);
+			concatPlayers.push("Dona");
+			console.log("* Dona joined the team Concat *");
+			console.log("original:", players);
+			console.log("concat:", concatPlayers);
+			console.groupEnd();
+			console.log("");
+
+			// or use the new ES6 Spread
+			console.groupCollapsed(
+				"%cCase 2-4. Spread",
+				"font-weight: 600; font-size: 1.2rem"
+			);
+			const spreadPlayers = [...players];
+			console.log(
+				"%cconst spreadPlayers = [...players];",
+				"font-style: italic; color: crimson"
+			);
+			console.log("original:", players);
+			console.log("spread:", spreadPlayers);
+			spreadPlayers.push("Michael");
+			console.log("* Michael joined the team Spread *");
+			console.log("original:", players);
+			console.log("spread:", spreadPlayers);
+			console.groupEnd();
+			console.log("");
+
+			// now when we update it, the original one isn't changed
+			console.groupCollapsed(
+				"%cCase 2-5. From",
+				"font-weight: 600; font-size: 1.2rem"
+			);
+			const fromPlayers = Array.from(players);
+			console.log(
+				"%cconst fromPlayers = Array.from(players);",
+				"font-style: italic; color: crimson"
+			);
+			console.log("original:", players);
+			console.log("from:", fromPlayers);
+			fromPlayers.push("Belle");
+			console.log("* Belle joined the team From *");
+			console.log("original:", players);
+			console.log("from:", fromPlayers);
+			console.groupEnd();
+			console.log("");
+
+			// The same thing goes for objects, let's say we have a person object
+
+			// with Objects
+			console.groupCollapsed(
+				"%cCase 3-1. Object",
+				"font-weight: 600; font-size: 1.2rem"
+			);
+			const person = {
+				name: "Wes Bos",
+				age: 80,
+			};
+
+			// and think we make a copy:
+			const captain = person;
+			console.log("original:", person);
+			console.log("copied:", captain);
+			captain.age = 99;
+			console.log("* captain got old *");
+			console.log("original:", person);
+			console.log("copied:", captain);
+			console.groupEnd();
+			console.log("");
+
+			// how do we take a copy instead?
+			console.groupCollapsed(
+				"%cCase 3-2. Assign",
+				"font-weight: 600; font-size: 1.2rem"
+			);
+			const assignPerson = Object.assign({}, person, { backnumber: 7 });
+			console.log(
+				"%cconst assignPerson = Object.assign({}, person, {backnumber: 7});",
+				"font-style: italic; color: crimson"
+			);
+			console.log("original:", person);
+			console.log("assign:", assignPerson);
+			assignPerson.age = 100;
+			console.log("* assign got old *");
+			console.log("original:", person);
+			console.log("assign:", assignPerson);
+			console.groupEnd();
+			console.log("");
+
+			// We will hopefully soon see the object ...spread
+			console.groupCollapsed(
+				"%cCase 3-3. Spread",
+				"font-weight: 600; font-size: 1.2rem"
+			);
+			const spreadPerson = { ...person };
+			console.log(
+				"%cconst spreadPerson = {...person};",
+				"font-style: italic; color: crimson"
+			);
+			console.log("original:", person);
+			console.log("spread:", spreadPerson);
+			spreadPerson.age = 100;
+			console.log("* spread got old *");
+			console.log("original:", person);
+			console.log("spread:", spreadPerson);
+			console.groupEnd();
+			console.log("");
+
+			// Things to note - this is only 1 level deep - both for Arrays and Objects.
+			// lodash has a cloneDeep method, but you should think twice before using it.
+			console.groupCollapsed(
+				"%cCase 4-1. Depth",
+				"font-weight: 600; font-size: 1.2rem"
+			);
+			const wes = {
+				name: "Wes Bos",
+				age: 35,
+				social: { twitter: "@wesbos", email: "wesbos@gmail.com" },
+			};
+			const dev = { ...wes };
+			console.log("original:", wes);
+			console.log("spread:", dev);
+			dev.age = 40;
+			console.log("* dev got old *");
+			console.log("original:", wes);
+			console.log("spread:", dev);
+			console.log("* dev changed email *");
+			console.log("original:", JSON.stringify(wes));
+			dev.social.email = "support@wes.com";
+			console.log("spread:", JSON.stringify(dev));
+			console.groupEnd();
+			console.log("");
+
+			// A simple breakthrough with vanilla JS is using JSON methods.
+			console.groupCollapsed(
+				"%cCase 4-2. JSON",
+				"font-weight: 600; font-size: 1.2rem"
+			);
+			const json = JSON.parse(JSON.stringify(wes));
+			console.log("original:", wes);
+			console.log("JSON:", json);
+			json.social["instagram"] = "@wes._.bos";
+			console.log("* json added instagram *");
+			console.log("original:", wes);
+			console.log("JSON:", json);
+			console.groupEnd();
+			console.log("");
+		</script>
+	</body>
+</html>
