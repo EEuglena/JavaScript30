@@ -57,13 +57,12 @@
 			console.log("");
 
 			// Let's say we have an array
+			// and we want to make a copy of it.
 			console.groupCollapsed(
 				"%cCase 2-1. Array",
 				"font-weight: 600; font-size: 1.2rem"
 			);
 			const players = ["Wes", "Sarah", "Ryan", "Poppy"];
-
-			// and we want to make a copy of it.
 			const roster = players;
 			console.log("original:", players);
 			console.log("copied:", roster);
@@ -242,10 +241,10 @@
 			console.log("* dev got old *");
 			console.log("original:", wes);
 			console.log("spread:", dev);
-			console.log("* dev changed email *");
-			console.log("original:", JSON.stringify(wes));
 			dev.social.email = "support@wes.com";
-			console.log("spread:", JSON.stringify(dev));
+			console.log("* dev changed email *");
+			console.log("original:", wes);
+			console.log("spread:", dev);
 			console.groupEnd();
 			console.log("");
 
