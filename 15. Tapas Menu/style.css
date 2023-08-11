@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Noto+Sans&display=swap");
+
+.hidden {
+	display: none;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	font-family: "Noto Sans";
+}
+
+body {
+	margin: 0;
+	background-image: url("./background.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+input,
+button {
+	font-family: "Noto Sans";
+}
+
+.container {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	padding: 2rem;
+	border-radius: 1rem;
+}
+
+h1 {
+	margin: 0;
+}
+
+ul {
+	width: 80%;
+	list-style: none;
+	padding: 0;
+}
+
+.menu {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #bbb;
+}
+
+.menu:first-child {
+	border-top: 1px solid #bbb;
+}
+
+.menu input {
+	cursor: pointer;
+}
+
+.menu p {
+	text-transform: capitalize;
+}
+
+.menu button {
+	border: none;
+	color: red;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.menu button:hover {
+	background-color: #bbb;
+}
+
+.alert {
+	position: absolute;
+	bottom: 12%;
+	padding: 0.4rem 0.8rem;
+	border-radius: 0.2rem;
+	background-color: #fa5555;
+}
