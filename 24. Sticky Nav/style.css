@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR&display=swap");
+
+html {
+	font-family: "Noto Sans KR", "Noto Sans";
+}
+
+body {
+	margin: 0;
+	background-color: #ddd;
+}
+
+header {
+	height: 20rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-image: url("https://source.unsplash.com/dGykChurwbo/960x640");
+	background-size: cover;
+}
+
+h1 {
+	font-size: 3.5rem;
+	color: white;
+	text-shadow: 3px 3px 0 #000;
+}
+
+nav {
+	height: 3rem;
+	background-color: #000;
+	top: 0;
+	position: sticky;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	list-style: none;
+}
+
+li {
+	height: 100%;
+	flex: 1;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.5s;
+}
+
+li a {
+	text-decoration: none;
+	color: white;
+}
+
+.logo {
+	max-width: 0;
+	background-color: #fff;
+}
+
+.logo a {
+	color: #000;
+	font-weight: 600;
+}
+
+.container {
+	max-width: 40rem;
+	background-color: #fff;
+	margin: 2rem auto;
+	padding: 2rem;
+	box-shadow: 6px 6px 9px #bbb;
+	text-align: justify;
+}
