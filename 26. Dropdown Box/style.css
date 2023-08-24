@@ -15,7 +15,8 @@ header {
 .logo {
 	position: absolute;
 	left: 1rem;
-	border: 7px solid black;
+	border: 7px solid #f7a196;
+	color: #c54e3e;
 	font-size: 2rem;
 	font-weight: 700;
 }
