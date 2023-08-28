@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Countdown Clock</title>
+		<link
+			rel="shortcut icon"
+			href="https://fav.farm/⏱"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="toolbar">
+			<div class="s20">20s</div>
+			<div class="m5">5m</div>
+			<div class="m15">15m</div>
+			<div class="m20">20m</div>
+			<div class="h1">1h</div>
+			<div class="custom">
+				<form>
+					<input type="number" name="minute" value="0" min="0" />:
+					<input
+						type="number"
+						name="second"
+						value="0"
+						max="59"
+						min="0"
+					/>
+					<button type="submit">GO</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="main">
+			<div class="clock">00:00</div>
+			<div class="end">Be back at 00:00</div>
+		</div>
+
+		<script src="./index.js"></script>
+	</body>
+</html>
