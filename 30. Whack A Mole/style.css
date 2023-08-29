@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR&display=swap");
+
+html {
+	cursor: url("https://fav.farm/🔨") 0 5, auto;
+}
+
+body {
+	margin: 0;
+	font-family: "Noto Sans";
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	background-color: rgb(255, 199, 79);
+}
+
+h1 {
+	margin: 4rem;
+}
+
+.board {
+	margin: 3rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.line {
+	flex: 0;
+	display: flex;
+	flex-direction: row;
+}
+
+.hole {
+	overflow: hidden;
+	width: 8rem;
+	height: 8rem;
+	margin: 1rem;
+	position: relative;
+}
+
+.mole {
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	transition: all 1s;
+	width: 5rem;
+	position: absolute;
+}
+
+.hole.up .mole {
+	transform: translate(-50%, -100%);
+}
+
+.dirt {
+	bottom: -20%;
+	left: 0;
+	width: 8rem;
+	position: absolute;
+}
+
+.button {
+	font-weight: 900;
+	margin: 3rem;
+	width: 8rem;
+	height: 8rem;
+	background-color: rgb(230, 103, 0);
+	box-shadow: 8px 8px 8px #44444499;
+	border: 9px solid white;
+	border-radius: 5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2rem;
+	color: white;
+}
+
+.button:hover {
+	transform: translate(4px, 4px);
+	box-shadow: 4px 4px 8px #44444499;
+}
