@@ -31,13 +31,15 @@ const initGame = () => {
 
 const playGame = () => {
 	initGame();
-	setTimeout(() => {
-		isPlaying = false;
-		alert(`You caught ${score} moles!`);
-		clearTimeout(timer);
-		holes.forEach((hole) => hole.classList.remove("up"));
-	}, PLAY_TIME);
+	setTimeout(endGame, PLAY_TIME);
 	randomHoleUp();
+};
+
+const endGame = () => {
+	isPlaying = false;
+	alert(`You caught ${score} moles!`);
+	clearTimeout(timer);
+	holes.forEach((hole) => hole.classList.remove("up"));
 };
 
 function handleHole(event) {
