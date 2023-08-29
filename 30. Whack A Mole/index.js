@@ -51,7 +51,9 @@ function handleHole(event) {
 }
 
 const handleButton = () => {
-	playGame();
+	if (!isPlaying) {
+		playGame();
+	}
 };
 
 holes.forEach((hole) => hole.addEventListener("click", handleHole));
